@@ -1,0 +1,3 @@
+/home/khristopher/University/ULA/PR3/Proyecto/Chess-3.33-main/build/_deps/sfml-subbuild/CMakeFiles/sfml-populate.dir
+/home/khristopher/University/ULA/PR3/Proyecto/Chess-3.33-main/build/_deps/sfml-subbuild/CMakeFiles/edit_cache.dir
+/home/khristopher/University/ULA/PR3/Proyecto/Chess-3.33-main/build/_deps/sfml-subbuild/CMakeFiles/rebuild_cache.dir
