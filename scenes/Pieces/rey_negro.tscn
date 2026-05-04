@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cw6jsliwe1t4q"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_r65x3"]
+[ext_resource type="Texture2D" uid="uid://bi705plivixl" path="res://sprites/rey_negro.png" id="2_bn0gw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6c13"]
+size = Vector2(50, 52)
+
+[node name="Rey Negro" type="Area2D" unique_id=273080732]
+script = ExtResource("1_r65x3")
+es_blanca = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926479816]
+scale = Vector2(0.1, 0.06)
+texture = ExtResource("2_bn0gw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351456875]
+shape = SubResource("RectangleShape2D_b6c13")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c0bfq2yji4fn0"]
+
+[ext_resource type="PackedScene" uid="uid://bs1sjp5r4whl1" path="res://scenes/Pieces/caballo_blanco.tscn" id="1_jxohg"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_usg58"]
+[ext_resource type="PackedScene" uid="uid://ckehefq1kvgnd" path="res://scenes/Turotial/leccion_06.tscn" id="2_jxohg"]
+[ext_resource type="PackedScene" uid="uid://tp0i2jbijt26" path="res://scenes/Pieces/caballo_negro.tscn" id="2_usg58"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+
+[node name="Leccion_05" type="Node2D" unique_id=10805880]
+
+[node name="TutorialInfo" parent="." unique_id=328872190 instance=ExtResource("3_info")]
+texto_explicativo = "El Caballo se mueve en 'L' y puede saltar sobre otras piezas."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_usg58")]
+
+[node name="Caballo" parent="Tablero" unique_id=273080732 instance=ExtResource("1_jxohg")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("2_jxohg")
+movimiento = Vector2(64, -128)
+
+[node name="Caballo2" parent="Tablero" unique_id=2068780988 instance=ExtResource("2_usg58")]
+position = Vector2(224, 160)
+script = null

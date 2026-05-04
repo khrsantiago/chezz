@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://c5q8k7v4m6p3r"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_esqueleto"]
+[ext_resource type="Texture2D" uid="uid://docaduw7bmvxu" path="res://sprites/esqueleto_blanco.png" id="2_esqueleto"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esqueleto"]
+size = Vector2(50, 50)
+
+[node name="Esqueleto Blanco" type="Area2D" unique_id=273080732]
+script = ExtResource("1_esqueleto")
+tipo = 5
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926479816]
+scale = Vector2(0.098, 0.06)
+texture = ExtResource("2_esqueleto")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351456875]
+shape = SubResource("RectangleShape2D_esqueleto")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

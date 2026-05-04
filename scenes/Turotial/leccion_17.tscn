@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3n7jmnuri0us"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://c5q8k7v4m6p3r" path="res://scenes/Pieces/esqueleto_blanco.tscn" id="2_esqueleto"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+[ext_resource type="PackedScene" path="res://scenes/Turotial/leccion_18.tscn" id="3_next"]
+
+[node name="Leccion_17" type="Node2D" unique_id=126300146]
+
+[node name="TutorialInfo" parent="." unique_id=109542480 instance=ExtResource("3_info")]
+texto_explicativo = "El Esqueleto se mueve dos casillas en diagonal."
+
+[node name="Tablero" parent="." unique_id=1768679429 instance=ExtResource("1_tablero")]
+
+[node name="Esqueleto" parent="Tablero" unique_id=641711813 instance=ExtResource("2_esqueleto")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("3_next")
+movimiento = Vector2(128, -128)

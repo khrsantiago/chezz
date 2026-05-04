@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://baff3iic0x3iv"]
+
+[ext_resource type="PackedScene" uid="uid://b6jhudmx0lkvd" path="res://scenes/Pieces/peon_blanco.tscn" id="1_6br3t"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_s7ow2"]
+[ext_resource type="PackedScene" uid="uid://dls1kkey0her8" path="res://scenes/Turotial/leccion_02.tscn" id="2_cjksn"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+
+[node name="Leccion_01" type="Node2D" unique_id=1419349951]
+
+[node name="TutorialInfo" parent="." unique_id=1750502679 instance=ExtResource("3_info")]
+offset = Vector2(0, 100)
+scale = Vector2(1, 0.8)
+transform = Transform2D(1, 0, 0, 0.8, 0, 100)
+texto_explicativo = "El Peón se mueve una casilla hacia adelante."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_s7ow2")]
+position = Vector2(195, 70)
+
+[node name="Peon" parent="Tablero" unique_id=273080732 instance=ExtResource("1_6br3t")]
+position = Vector2(224, 288)
+siguiente_leccion = ExtResource("2_cjksn")
+movimiento = Vector2(0, -128)

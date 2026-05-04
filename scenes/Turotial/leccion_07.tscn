@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dt72mmcbkypaa"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_2d024"]
+[ext_resource type="PackedScene" uid="uid://damjb8aw1wtf3" path="res://scenes/Pieces/reina_blanco.tscn" id="1_n255f"]
+[ext_resource type="PackedScene" uid="uid://dthoi1yt2ueju" path="res://scenes/Turotial/leccion_08.tscn" id="2_fifpc"]
+[ext_resource type="PackedScene" uid="uid://bhjq7vqbbw83x" path="res://scenes/Pieces/reina_negro.tscn" id="2_m4v8m"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+
+[node name="Leccion_07" type="Node2D" unique_id=1791939240]
+
+[node name="TutorialInfo" parent="." unique_id=728979751 instance=ExtResource("3_info")]
+texto_explicativo = "La Reina se mueve en cualquier dirección (horizontal, vertical o diagonal)."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_2d024")]
+
+[node name="Reina" parent="Tablero" unique_id=273080732 instance=ExtResource("1_n255f")]
+position = Vector2(288, 160)
+siguiente_leccion = ExtResource("2_fifpc")
+movimiento = Vector2(-128, 128)
+
+[node name="reina" parent="Tablero" unique_id=1716467759 instance=ExtResource("2_m4v8m")]
+position = Vector2(160, 288)
+script = null

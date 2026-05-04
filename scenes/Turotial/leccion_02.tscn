@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dls1kkey0her8"]
+
+[ext_resource type="PackedScene" uid="uid://b6jhudmx0lkvd" path="res://scenes/Pieces/peon_blanco.tscn" id="1_b81ya"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_jqp5r"]
+[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="2_b81ya"]
+[ext_resource type="PackedScene" uid="uid://cmqibv0qu670h" path="res://scenes/Turotial/leccion_03.tscn" id="2_q87mx"]
+
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="4_info"]
+
+[node name="Leccion_02" type="Node2D" unique_id=129167683]
+
+[node name="TutorialInfo" parent="." instance=ExtResource("4_info")]
+texto_explicativo = "El Peón captura piezas enemigas moviéndose en diagonal."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_jqp5r")]
+
+[node name="Peon" parent="Tablero" unique_id=273080732 instance=ExtResource("1_b81ya")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("2_q87mx")
+movimiento = Vector2(64, -64)
+
+[node name="Peon2" parent="Tablero" unique_id=311030491 instance=ExtResource("2_b81ya")]
+position = Vector2(224, 224)
+script = null
+
+[connection signal="area_entered" from="Tablero/Peon" to="Tablero/Peon" method="_on_area_entered"]

@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://ckehefq1kvgnd"]
+
+[ext_resource type="PackedScene" uid="uid://bamofal1cfqm4" path="res://scenes/Pieces/alfil_blanco.tscn" id="1_5wh8n"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_mbmc0"]
+[ext_resource type="PackedScene" uid="uid://cryfesys82fq6" path="res://scenes/Pieces/alfil_negro.tscn" id="2_67m41"]
+[ext_resource type="PackedScene" uid="uid://dt72mmcbkypaa" path="res://scenes/Turotial/leccion_07.tscn" id="2_xxe0b"]
+
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+
+[node name="Leccion_06" type="Node2D" unique_id=1117510026]
+
+[node name="TutorialInfo" parent="." instance=ExtResource("3_info")]
+texto_explicativo = "El Alfil se mueve en diagonal cualquier distancia."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_mbmc0")]
+
+[node name="Alfil" parent="." unique_id=273080732 instance=ExtResource("1_5wh8n")]
+position = Vector2(160, 224)
+siguiente_leccion = ExtResource("2_xxe0b")
+movimiento = Vector2(128, -128)
+
+[node name="Alfil2" parent="." unique_id=1173278374 instance=ExtResource("2_67m41")]
+position = Vector2(288, 96)
+script = null
