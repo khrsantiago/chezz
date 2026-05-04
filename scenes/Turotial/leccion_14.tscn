@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dsqahsco8pr52"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://bwkisgikprgbs" path="res://scenes/Pieces/mago_blanco.tscn" id="2_mago"]
+[ext_resource type="PackedScene" uid="uid://xayueq1c8e7s" path="res://scenes/Pieces/torre_negro.tscn" id="3_torre"]
+[ext_resource type="PackedScene" path="res://scenes/Turotial/leccion_15.tscn" id="4_next"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="5_info"]
+
+[node name="Leccion_14" type="Node2D" unique_id=1083511427]
+
+[node name="TutorialInfo" parent="." unique_id=517080662 instance=ExtResource("5_info")]
+texto_explicativo = "Usa al Mago para capturar la torre enemiga."
+
+[node name="Tablero" parent="." unique_id=587793249 instance=ExtResource("1_tablero")]
+
+[node name="Mago" parent="Tablero" unique_id=282622355 instance=ExtResource("2_mago")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("4_next")
+movimiento = Vector2(0, -192)
+
+[node name="Torre" parent="Tablero" unique_id=1414488143 instance=ExtResource("3_torre")]
+position = Vector2(160, 96)
+input_pickable = false

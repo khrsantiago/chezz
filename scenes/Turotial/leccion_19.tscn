@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://do10gtkg83e2r"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://d2r4k8v5n7p4s" path="res://scenes/Pieces/dragon_blanco.tscn" id="2_dragon"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+[ext_resource type="PackedScene" uid="uid://v8eyn4hdd2k5" path="res://scenes/Turotial/leccion_20.tscn" id="3_next"]
+
+[node name="Leccion_19" type="Node2D" unique_id=1675100520]
+
+[node name="TutorialInfo" parent="." unique_id=2017613059 instance=ExtResource("3_info")]
+texto_explicativo = "El Dragón se mueve en 'L' como un Caballo."
+
+[node name="Tablero" parent="." unique_id=1849468033 instance=ExtResource("1_tablero")]
+
+[node name="Dragon" parent="Tablero" unique_id=556856891 instance=ExtResource("2_dragon")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("3_next")
+movimiento = Vector2(64, -128)

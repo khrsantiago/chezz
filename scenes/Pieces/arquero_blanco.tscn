@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dxhl6pq5fdrdx"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_bqhp0"]
+[ext_resource type="Texture2D" uid="uid://07n84jmdav4t" path="res://sprites/arquero_blanco.png" id="2_kxuni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kt41v"]
+size = Vector2(50.5, 50.25)
+
+[node name="Arquero Blanco" type="Area2D" unique_id=1798723917]
+script = ExtResource("1_bqhp0")
+tipo = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=240113623]
+scale = Vector2(0.1, 0.065)
+texture = ExtResource("2_kxuni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1866639883]
+shape = SubResource("RectangleShape2D_kt41v")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

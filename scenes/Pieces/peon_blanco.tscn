@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b6jhudmx0lkvd"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_dlx54"]
+[ext_resource type="Texture2D" uid="uid://3d4g4re1elag" path="res://sprites/peon_blanco.png" id="2_y6xsv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6c13"]
+size = Vector2(54, 51)
+
+[node name="Peon Blanco" type="Area2D" unique_id=273080732]
+script = ExtResource("1_dlx54")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926479816]
+scale = Vector2(0.11, 0.08)
+texture = ExtResource("2_y6xsv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351456875]
+shape = SubResource("RectangleShape2D_b6c13")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

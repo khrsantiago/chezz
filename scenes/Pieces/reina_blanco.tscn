@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://damjb8aw1wtf3"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_vrrjs"]
+[ext_resource type="Texture2D" uid="uid://bu2kn4a3id3yu" path="res://sprites/reina_blanco.png" id="2_vwudx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6c13"]
+size = Vector2(48, 47.5)
+
+[node name="Reina Blanco" type="Area2D" unique_id=273080732]
+script = ExtResource("1_vrrjs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926479816]
+position = Vector2(0, 1.9999938)
+scale = Vector2(0.11, 0.06)
+texture = ExtResource("2_vwudx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351456875]
+shape = SubResource("RectangleShape2D_b6c13")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

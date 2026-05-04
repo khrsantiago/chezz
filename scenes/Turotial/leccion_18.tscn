@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cctgo17fkxl47"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://c5q8k7v4m6p3r" path="res://scenes/Pieces/esqueleto_blanco.tscn" id="2_esqueleto"]
+[ext_resource type="PackedScene" uid="uid://xayueq1c8e7s" path="res://scenes/Pieces/torre_negro.tscn" id="3_torre"]
+[ext_resource type="PackedScene" path="res://scenes/Turotial/leccion_19.tscn" id="4_next"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="5_info"]
+
+[node name="Leccion_18" type="Node2D" unique_id=1876387539]
+
+[node name="TutorialInfo" parent="." unique_id=811796086 instance=ExtResource("5_info")]
+texto_explicativo = "El Esqueleto también puede moverse en línea recta."
+
+[node name="Tablero" parent="." unique_id=1210798831 instance=ExtResource("1_tablero")]
+
+[node name="Esqueleto" parent="Tablero" unique_id=1129363343 instance=ExtResource("2_esqueleto")]
+position = Vector2(160, 224)
+siguiente_leccion = ExtResource("4_next")
+movimiento = Vector2(128, 0)
+
+[node name="Torre" parent="Tablero" unique_id=638853383 instance=ExtResource("3_torre")]
+position = Vector2(288, 224)
+input_pickable = false

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://tp0i2jbijt26"]
+
+[ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_xu3il"]
+[ext_resource type="Texture2D" uid="uid://bgl53erieyc3p" path="res://sprites/caballo_negro.png" id="2_trd8x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b6c13"]
+size = Vector2(53.5, 51)
+
+[node name="Caballo Negro" type="Area2D" unique_id=273080732]
+script = ExtResource("1_xu3il")
+es_blanca = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=926479816]
+position = Vector2(0, 1.4305115e-06)
+scale = Vector2(0.11, 0.07)
+texture = ExtResource("2_trd8x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1351456875]
+shape = SubResource("RectangleShape2D_b6c13")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="input_event" from="." to="." method="_on_input_event"]

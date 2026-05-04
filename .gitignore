@@ -1,0 +1,44 @@
+# --- Godot 4.x ---
+.godot/
+*.import
+export_presets.cfg
+!.gdextension
+
+# --- GDExtension / C++ ---
+# Build artifacts
+*.o
+*.os
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+*.pdb
+*.exp
+
+# SCons
+.sconsign.dblite
+.sconf_temp/
+
+# Binaries (keep the folder structure but ignore generated binaries)
+bin/**/*
+!bin/.gdignore
+
+# godot-cpp (If you don't want to track the whole library source, 
+# although usually it's a git submodule. If it's not a submodule, ignore its builds)
+godot-cpp/bin/
+godot-cpp/gen/
+
+# --- IDEs and OS ---
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# --- Python / Venv ---
+venv/
+__pycache__/
+*.pyc

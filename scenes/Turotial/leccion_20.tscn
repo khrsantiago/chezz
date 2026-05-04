@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://v8eyn4hdd2k5"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://d2r4k8v5n7p4s" path="res://scenes/Pieces/dragon_blanco.tscn" id="2_dragon"]
+[ext_resource type="PackedScene" uid="uid://xayueq1c8e7s" path="res://scenes/Pieces/torre_negro.tscn" id="3_torre"]
+[ext_resource type="PackedScene" uid="uid://sbep8mj1sykp" path="res://scenes/Turotial/leccion_final.tscn" id="4_final"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="5_info"]
+
+[node name="Leccion_20" type="Node2D" unique_id=505904048]
+
+[node name="TutorialInfo" parent="." unique_id=1834856535 instance=ExtResource("5_info")]
+texto_explicativo = "¡Desafío Final! Usa el gran alcance del Dragón para capturar la torre lejana."
+
+[node name="Tablero" parent="." unique_id=235150964 instance=ExtResource("1_tablero")]
+
+[node name="Dragon" parent="Tablero" unique_id=420979644 instance=ExtResource("2_dragon")]
+position = Vector2(160, 224)
+siguiente_leccion = ExtResource("4_final")
+movimiento = Vector2(128, -128)
+
+[node name="Torre" parent="Tablero" unique_id=1484870886 instance=ExtResource("3_torre")]
+position = Vector2(288, 96)
+input_pickable = false

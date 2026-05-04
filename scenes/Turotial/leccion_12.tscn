@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjfeafofj6smn"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://dx6vbts13hptx" path="res://scenes/Pieces/ogro_blanco.tscn" id="2_ogro"]
+[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="3_peon"]
+[ext_resource type="PackedScene" path="res://scenes/Turotial/leccion_13.tscn" id="4_next"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="5_info"]
+
+[node name="Leccion_12" type="Node2D" unique_id=1565918893]
+
+[node name="TutorialInfo" parent="." unique_id=1594095970 instance=ExtResource("5_info")]
+texto_explicativo = "¡Cuidado! El Ogro solo puede capturar piezas adyacentes (a su lado)."
+
+[node name="Tablero" parent="." unique_id=1642350153 instance=ExtResource("1_tablero")]
+
+[node name="Ogro" parent="Tablero" unique_id=202369973 instance=ExtResource("2_ogro")]
+position = Vector2(160, 224)
+siguiente_leccion = ExtResource("4_next")
+movimiento = Vector2(64, -64)
+
+[node name="Peon" parent="Tablero" unique_id=271759307 instance=ExtResource("3_peon")]
+position = Vector2(224, 160)
+script = null

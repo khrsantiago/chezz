@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://dthoi1yt2ueju"]
+
+[ext_resource type="PackedScene" uid="uid://d1bgynic5jbtu" path="res://scenes/Pieces/rey_blanco.tscn" id="1_dvdnn"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_jxd6l"]
+[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="2_fgkt5"]
+[ext_resource type="PackedScene" uid="uid://c107fusua8geb" path="res://scenes/Turotial/leccion_09.tscn" id="3_jxd6l"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="4_info"]
+
+[node name="Leccion_08" type="Node2D" unique_id=1977740436]
+
+[node name="TutorialInfo" parent="." unique_id=150045572 instance=ExtResource("4_info")]
+texto_explicativo = "El Rey se mueve una casilla en cualquier dirección."
+
+[node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_jxd6l")]
+
+[node name="Rey" parent="Tablero" unique_id=273080732 instance=ExtResource("1_dvdnn")]
+position = Vector2(160, 224)
+siguiente_leccion = ExtResource("3_jxd6l")
+movimiento = Vector2(64, 0)
+
+[node name="Peon" parent="Tablero" unique_id=1060854728 instance=ExtResource("2_fgkt5")]
+position = Vector2(224, 224)
+script = null

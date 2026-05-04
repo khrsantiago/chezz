@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c68fxahnx3jrh"]
+
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://bwkisgikprgbs" path="res://scenes/Pieces/mago_blanco.tscn" id="2_mago"]
+[ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
+[ext_resource type="PackedScene" path="res://scenes/Turotial/leccion_14.tscn" id="3_next"]
+
+[node name="Leccion_13" type="Node2D" unique_id=1160591685]
+
+[node name="TutorialInfo" parent="." unique_id=1647980300 instance=ExtResource("3_info")]
+texto_explicativo = "El Mago se mueve en 'L' como un Caballo."
+
+[node name="Tablero" parent="." unique_id=124019497 instance=ExtResource("1_tablero")]
+
+[node name="Mago" parent="Tablero" unique_id=1060618952 instance=ExtResource("2_mago")]
+position = Vector2(160, 288)
+siguiente_leccion = ExtResource("3_next")
+movimiento = Vector2(64, -128)
