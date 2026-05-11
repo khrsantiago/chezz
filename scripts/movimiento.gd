@@ -10,18 +10,56 @@ enum TipoPieza { NORMAL, ARQUERO, PORTAL, OGRO, MAGO, ESQUELETO, DRAGON }
 @export var es_ataque_a_distancia: bool = false # Para el Arquero o similares
 
 @export var es_blanca: bool = true
+@export var es_arrastrable: bool = false
+var arrastrando: bool = false
+var pos_inicial_arrastre: Vector2
 
 func _ready():
 	if tipo == TipoPieza.MAGO:
 		add_to_group("mago")
 
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-		if not es_blanca:
-			return
-		print("Clic detectado en: ", name)
-		mostrar_indicador()
-		get_viewport().set_input_as_handled()
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+		if event.pressed:
+			if es_arrastrable:
+				arrastrando = true
+				pos_inicial_arrastre = position
+				z_index = 100 # Llevar al frente al arrastrar
+				get_viewport().set_input_as_handled()
+			elif es_blanca:
+				print("Clic detectado en: ", name)
+				mostrar_indicador()
+				get_viewport().set_input_as_handled()
+
+func _input(event):
+	if arrastrando and event is InputEventMouseMotion:
+		# Mover la pieza con el ratón
+		# Convertimos la posición global del ratón a la posición local del padre (Tablero)
+		position = get_parent().to_local(get_global_mouse_position())
+		
+	if arrastrando and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and not event.pressed:
+		arrastrando = false
+		z_index = 0
+		
+		# Ajustar a la cuadrícula de 64x64 (centrado en la celda)
+		var x_grid = floor(position.x / 64) * 64 + 32
+		var y_grid = floor(position.y / 64) * 64 + 32
+		
+		var fila = floor(y_grid / 64)
+		var columna = floor(x_grid / 64)
+		
+		if es_blanca:
+			if fila >= 3 and fila <= 5 and columna >= 0 and columna <= 5:
+				position = Vector2(x_grid, y_grid)
+			else:
+				# Volver a la posición inicial si está fuera de rango
+				position = pos_inicial_arrastre
+		else: # Negras
+			if fila >= 0 and fila <= 2 and columna >= 0 and columna <= 5:
+				position = Vector2(x_grid, y_grid)
+			else:
+				# Volver a la posición inicial si está fuera de rango
+				position = pos_inicial_arrastre
 
 func mostrar_indicador():
 	limpiar_indicadores()

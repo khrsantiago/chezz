@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://b876qv3v6cwno"]
+
+[ext_resource type="Script" uid="uid://cpfp0cvlj4wuv" path="res://scripts/juego.gd" id="1_script"]
+[ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
+[ext_resource type="PackedScene" uid="uid://b6jhudmx0lkvd" path="res://scenes/Pieces/peon_blanco.tscn" id="2_peon_blanco"]
+[ext_resource type="PackedScene" uid="uid://co1x6nx3tc0ai" path="res://scenes/Pieces/torre_blanco.tscn" id="3_torre_blanco"]
+[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="4_peon_negro"]
+[ext_resource type="PackedScene" uid="uid://xayueq1c8e7s" path="res://scenes/Pieces/torre_negro.tscn" id="5_torre_negro"]
+
+[node name="Juego" type="Node2D" unique_id=2052443606]
+script = ExtResource("1_script")
+
+[node name="BackgroundColor" type="ColorRect" parent="." unique_id=728701969]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.2, 0.25, 1)
+
+[node name="Tablero" parent="." unique_id=77447982 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
+[node name="ZonaProhibida" type="ColorRect" parent="Tablero" unique_id=634645668]
+offset_right = 386.66663
+offset_bottom = 192.0
+mouse_filter = 2
+color = Color(0.2, 0.2, 0.2, 0.5)
+
+[node name="PeonBlanco1" parent="Tablero" unique_id=1134993838 instance=ExtResource("2_peon_blanco")]
+position = Vector2(-55, 64)
+
+[node name="PeonBlanco2" parent="Tablero" unique_id=105197408 instance=ExtResource("2_peon_blanco")]
+position = Vector2(-55, 128)
+
+[node name="TorreBlanca" parent="Tablero" unique_id=1465305580 instance=ExtResource("3_torre_blanco")]
+position = Vector2(-55, 192)
+
+[node name="PeonNegro1" parent="Tablero" unique_id=2056475721 instance=ExtResource("4_peon_negro")]
+position = Vector2(433.33334, 59.999996)
+
+[node name="PeonNegro2" parent="Tablero" unique_id=1688486521 instance=ExtResource("4_peon_negro")]
+position = Vector2(433.33334, 124)
+
+[node name="TorreNegra" parent="Tablero" unique_id=1187945009 instance=ExtResource("5_torre_negro")]
+position = Vector2(433.33334, 188)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=512267551]
+
+[node name="BotonOK" type="Button" parent="CanvasLayer" unique_id=2065520129]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -60.0
+offset_top = -60.0
+offset_right = 60.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 24
+text = "OK"
+
+[connection signal="pressed" from="CanvasLayer/BotonOK" to="." method="_on_boton_ok_pressed"]
