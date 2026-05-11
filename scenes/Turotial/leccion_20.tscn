@@ -12,6 +12,9 @@
 texto_explicativo = "¡Desafío Final! Usa el gran alcance del Dragón para capturar la torre lejana."
 
 [node name="Tablero" parent="." unique_id=235150964 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Dragon" parent="Tablero" unique_id=420979644 instance=ExtResource("2_dragon")]
 position = Vector2(160, 224)

@@ -12,6 +12,9 @@
 texto_explicativo = "El Rey se mueve una casilla en cualquier dirección."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_jxd6l")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Rey" parent="Tablero" unique_id=273080732 instance=ExtResource("1_dvdnn")]
 position = Vector2(160, 224)

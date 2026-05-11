@@ -9,15 +9,17 @@
 [node name="Leccion_10" type="Node2D" unique_id=1791939240]
 
 [node name="TutorialInfo" parent="." unique_id=581493043 instance=ExtResource("4_info")]
-texto_explicativo = "¡Ataque a Distancia! El Arquero puede capturar piezas sin moverse si están en su rango."
+texto_explicativo = "¡Ataque a Distancia! Al atacar como un alfil, captura en diagonal sin moverse de su casilla."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_q6u0a")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
 
 [node name="Arquero" parent="Tablero" unique_id=1798723917 instance=ExtResource("2_g1ofw")]
 position = Vector2(160, 288)
 siguiente_leccion = ExtResource("3_vca4c")
-movimiento = Vector2(192, -192)
+movimiento = Vector2(128, -128)
 es_ataque_a_distancia = true
 
 [node name="Torre" parent="Tablero" unique_id=556529005 instance=ExtResource("3_g1ofw")]
-position = Vector2(224, 160)
+position = Vector2(288, 160)

@@ -11,6 +11,9 @@
 texto_explicativo = "El Ogro se mueve en línea recta como una Torre."
 
 [node name="Tablero" parent="." unique_id=1631780227 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Ogro Blanco" parent="Tablero" unique_id=5286463 instance=ExtResource("2_ogro")]
 position = Vector2(160, 288)

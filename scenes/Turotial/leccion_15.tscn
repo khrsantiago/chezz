@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://cf2ikjmwhkacp"]
 
 [ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_tablero"]
-[ext_resource type="PackedScene" uid="uid://bwkisgikprgbs" path="res://scenes/Pieces/mago_blanco.tscn" id="2_mago"]
-[ext_resource type="PackedScene" uid="uid://b6jhudmx0lkvd" path="res://scenes/Pieces/peon_blanco.tscn" id="3_peon"]
-[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="4_peon_negro"]
+[ext_resource type="PackedScene" path="res://scenes/Pieces/mago_negro.tscn" id="2_mago"]
+[ext_resource type="PackedScene" uid="uid://bw2ftlw671t7l" path="res://scenes/Pieces/peon_negro.tscn" id="3_peon"]
+[ext_resource type="PackedScene" uid="uid://b6jhudmx0lkvd" path="res://scenes/Pieces/peon_blanco.tscn" id="4_peon_blanco"]
 [ext_resource type="PackedScene" uid="uid://b6n7dovb23lkk" path="res://scenes/Turotial/leccion_16.tscn" id="5_next"]
 [ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="6_info"]
 
@@ -13,6 +13,9 @@
 texto_explicativo = "¡Habilidad de Apoyo! El Mago salva a las piezas aliadas cercanas de ser capturadas."
 
 [node name="Tablero" parent="." unique_id=1895887987 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Mago" parent="Tablero" unique_id=1363356830 instance=ExtResource("2_mago")]
 position = Vector2(160, 224)
@@ -22,7 +25,7 @@ input_pickable = false
 position = Vector2(224, 224)
 input_pickable = false
 
-[node name="Enemigo" parent="Tablero" unique_id=1623944571 instance=ExtResource("4_peon_negro")]
+[node name="Enemigo" parent="Tablero" unique_id=1623944571 instance=ExtResource("4_peon_blanco")]
 position = Vector2(288, 288)
 siguiente_leccion = ExtResource("5_next")
 movimiento = Vector2(-64, -64)

@@ -11,6 +11,9 @@
 texto_explicativo = "El Mago se mueve en 'L' como un Caballo."
 
 [node name="Tablero" parent="." unique_id=124019497 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Mago" parent="Tablero" unique_id=1060618952 instance=ExtResource("2_mago")]
 position = Vector2(160, 288)

@@ -5,4 +5,5 @@
 [node name="Leccion_07" type="Node2D" unique_id=1791939240]
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_kp0nx")]
-position = Vector2(25, 65)
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)

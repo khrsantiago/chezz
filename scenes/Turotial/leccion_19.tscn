@@ -11,6 +11,9 @@
 texto_explicativo = "El Dragón se mueve en 'L' como un Caballo."
 
 [node name="Tablero" parent="." unique_id=1849468033 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Dragon" parent="Tablero" unique_id=556856891 instance=ExtResource("2_dragon")]
 position = Vector2(160, 288)

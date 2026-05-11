@@ -12,6 +12,9 @@
 texto_explicativo = "¡Cuidado! El Ogro solo puede capturar piezas adyacentes (a su lado)."
 
 [node name="Tablero" parent="." unique_id=1642350153 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Ogro" parent="Tablero" unique_id=202369973 instance=ExtResource("2_ogro")]
 position = Vector2(160, 224)

@@ -17,13 +17,70 @@ func _ready():
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		if not es_blanca:
+			return
 		print("Clic detectado en: ", name)
-		# Para evitar que el jugador haga clic múltiples veces mientras se mueve
-		input_pickable = false 
-		mover_hacia_adelante()
+		mostrar_indicador()
+		get_viewport().set_input_as_handled()
+
+func mostrar_indicador():
+	limpiar_indicadores()
+	
+	var destino_local = position + movimiento
+	var destino_global = get_parent().to_global(destino_local)
+	var tiene_objetivo = hay_enemigo_en(destino_global)
+	
+	# REGLA DEL PORTAL
+	if tipo == TipoPieza.PORTAL and not tiene_objetivo:
+		print("El Portal solo puede intercambiarse con otras piezas.")
+		return
+		
+	# REGLA DEL OGRO
+	if tipo == TipoPieza.OGRO:
+		var dist_x = abs(movimiento.x)
+		var dist_y = abs(movimiento.y)
+		var max_dist = max(dist_x, dist_y)
+		if tiene_objetivo and max_dist > 80:
+			print("El Ogro solo puede capturar piezas adyacentes (como un Rey)")
+			return
+		if not tiene_objetivo and dist_x != 0 and dist_y != 0:
+			print("El Ogro se mueve en línea recta (como una Torre)")
+			return
+
+	var indicador_instancia = Area2D.new()
+	var script = load("res://scripts/indicador.gd")
+	indicador_instancia.set_script(script)
+	
+	var shape = CollisionShape2D.new()
+	var rect = RectangleShape2D.new()
+	rect.size = Vector2(64, 64)
+	shape.shape = rect
+	indicador_instancia.add_child(shape)
+	
+	indicador_instancia.color_dibujo = Color.RED if tiene_objetivo else Color.GRAY
+	indicador_instancia.global_position = destino_global
+	indicador_instancia.z_index = 10
+	
+	get_tree().current_scene.add_child(indicador_instancia)
+	indicador_instancia.connect("indicador_clickeado", Callable(self, "_on_indicador_clickeado"))
+
+func _on_indicador_clickeado():
+	limpiar_indicadores()
+	input_pickable = false 
+	mover_hacia_adelante()
+
+func limpiar_indicadores():
+	var indicadores = get_tree().get_nodes_in_group("indicadores_movimiento")
+	for ind in indicadores:
+		ind.queue_free()
+
+func _unhandled_input(event):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		limpiar_indicadores()
 
 func mover_hacia_adelante():
-	var destino_global = global_position + movimiento
+	var destino_local = position + movimiento
+	var destino_global = get_parent().to_global(destino_local)
 	var tiene_objetivo = hay_enemigo_en(destino_global)
 	
 	# REGLA DEL PORTAL: Intercambio
@@ -105,7 +162,8 @@ func intercambiar_con(objetivo_pos: Vector2):
 		procesar_fin_de_turno()
 
 func confirmar_captura_distancia():
-	var objetivo = global_position + movimiento
+	var objetivo_local = position + movimiento
+	var objetivo = get_parent().to_global(objetivo_local)
 	var victima = obtener_pieza_en(objetivo)
 	if victima:
 		capturar_pieza(victima)
@@ -117,7 +175,7 @@ func obtener_pieza_en(pos: Vector2) -> Node2D:
 	query.collide_with_areas = true
 	var resultados = espacio.intersect_point(query)
 	for res in resultados:
-		if res.collider != self:
+		if res.collider != self and not res.collider.is_in_group("indicadores_movimiento"):
 			return res.collider
 	return null
 
@@ -128,7 +186,11 @@ func capturar_pieza(victima: Node2D):
 		# Si el mago es del MISMO EQUIPO que la víctima
 		if mago.es_blanca == victima.get("es_blanca") and mago.global_position.distance_to(victima.global_position) < 200:
 			print("¡Pieza salvada por el Mago: ", victima.name, "!")
-			victima.visible = false
+			var tween = create_tween()
+			tween.tween_property(victima, "position:x", -64, 0.5)
+			victima.monitoring = false
+			victima.monitorable = false
+			victima.input_pickable = false
 			return
 	
 	victima.queue_free()

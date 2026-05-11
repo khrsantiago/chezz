@@ -8,13 +8,12 @@
 [node name="Leccion_01" type="Node2D" unique_id=1419349951]
 
 [node name="TutorialInfo" parent="." unique_id=1750502679 instance=ExtResource("3_info")]
-offset = Vector2(0, 100)
-scale = Vector2(1, 0.8)
-transform = Transform2D(1, 0, 0, 0.8, 0, 100)
 texto_explicativo = "El Peón se mueve una casilla hacia adelante."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_s7ow2")]
-position = Vector2(195, 70)
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Peon" parent="Tablero" unique_id=273080732 instance=ExtResource("1_6br3t")]
 position = Vector2(224, 288)

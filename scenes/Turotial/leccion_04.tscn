@@ -13,6 +13,9 @@
 texto_explicativo = "Captura la torre enemiga moviéndote a su casilla."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_ob0e3")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Torre" parent="Tablero" unique_id=1798723917 instance=ExtResource("1_k8i6j")]
 position = Vector2(160, 224)

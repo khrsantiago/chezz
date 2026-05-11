@@ -12,6 +12,9 @@
 texto_explicativo = "El Caballo se mueve en 'L' y puede saltar sobre otras piezas."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_usg58")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Caballo" parent="Tablero" unique_id=273080732 instance=ExtResource("1_jxohg")]
 position = Vector2(160, 288)

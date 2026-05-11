@@ -3,15 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bv7yfeo6c03go" path="res://scenes/tablero.tscn" id="1_1dgyf"]
 [ext_resource type="PackedScene" uid="uid://co1x6nx3tc0ai" path="res://scenes/Pieces/torre_blanco.tscn" id="1_secx5"]
 [ext_resource type="PackedScene" uid="uid://dbvhb2hgdsx5o" path="res://scenes/Turotial/leccion_04.tscn" id="2_6rpgt"]
-
 [ext_resource type="PackedScene" uid="uid://dgkp5n8x6j3f1" path="res://scenes/Turotial/tutorial_info.tscn" id="3_info"]
 
 [node name="Leccion_03" type="Node2D" unique_id=198777150]
 
-[node name="TutorialInfo" parent="." instance=ExtResource("3_info")]
+[node name="TutorialInfo" parent="." unique_id=1814960670 instance=ExtResource("3_info")]
 texto_explicativo = "La Torre se mueve en línea recta (horizontal o vertical) cualquier distancia."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_1dgyf")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Torre" parent="Tablero" unique_id=1798723917 instance=ExtResource("1_secx5")]
 position = Vector2(224, 288)

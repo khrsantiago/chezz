@@ -8,9 +8,12 @@
 [node name="Leccion_09" type="Node2D" unique_id=1791939240]
 
 [node name="TutorialInfo" parent="." unique_id=2047973330 instance=ExtResource("3_info")]
-texto_explicativo = "El Arquero se mueve en diagonal como un Alfil."
+texto_explicativo = "El Arquero se mueve como un caballo, pero ataca como un alfil."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_kp0nx")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Arquero" parent="Tablero" unique_id=1798723917 instance=ExtResource("2_0rr0y")]
 position = Vector2(160, 224)

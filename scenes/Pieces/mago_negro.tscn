@@ -1,17 +1,17 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://beqrk4jo0jyfw"]
 
 [ext_resource type="Script" uid="uid://3t4lx7ylqjg4" path="res://scripts/movimiento.gd" id="1_mago"]
-[ext_resource type="Texture2D" uid="uid://dbxat8qex38n6" path="res://sprites/mago_negro.png" id="2_mago"]
+[ext_resource type="Texture2D" uid="uid://cmkv60i87vmv7" path="res://sprites/mago_negro.png" id="2_mago"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mago"]
 size = Vector2(50, 50)
 
-[node name="Mago Negro" type="Area2D"]
+[node name="Mago Negro" type="Area2D" unique_id=1735852433]
 script = ExtResource("1_mago")
-es_blanca = false
 tipo = 4
+es_blanca = false
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1849570382]
 offset_left = -96.0
 offset_top = -96.0
 offset_right = 96.0
@@ -19,11 +19,11 @@ offset_bottom = 96.0
 mouse_filter = 2
 color = Color(0.12941177, 1, 1, 0.13333334)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.08, 0.08)
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=247217202]
+scale = Vector2(0.102, 0.06)
 texture = ExtResource("2_mago")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=72663169]
 shape = SubResource("RectangleShape2D_mago")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

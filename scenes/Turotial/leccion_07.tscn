@@ -12,6 +12,9 @@
 texto_explicativo = "La Reina se mueve en cualquier dirección (horizontal, vertical o diagonal)."
 
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_2d024")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Reina" parent="Tablero" unique_id=273080732 instance=ExtResource("1_n255f")]
 position = Vector2(288, 160)

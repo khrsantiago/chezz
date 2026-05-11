@@ -12,6 +12,9 @@
 texto_explicativo = "El Esqueleto también puede moverse en línea recta."
 
 [node name="Tablero" parent="." unique_id=1210798831 instance=ExtResource("1_tablero")]
+position = Vector2(168, 24)
+scale = Vector2(1.2, 1.2)
+
 
 [node name="Esqueleto" parent="Tablero" unique_id=1129363343 instance=ExtResource("2_esqueleto")]
 position = Vector2(160, 224)
