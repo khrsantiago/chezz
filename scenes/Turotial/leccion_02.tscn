@@ -26,3 +26,10 @@ position = Vector2(224, 224)
 script = null
 
 [connection signal="area_entered" from="Tablero/Peon" to="Tablero/Peon" method="_on_area_entered"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)

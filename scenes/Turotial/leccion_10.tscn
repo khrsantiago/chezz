@@ -23,3 +23,10 @@ es_ataque_a_distancia = true
 
 [node name="Torre" parent="Tablero" unique_id=556529005 instance=ExtResource("3_g1ofw")]
 position = Vector2(288, 160)
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)

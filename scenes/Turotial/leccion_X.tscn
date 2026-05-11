@@ -7,3 +7,10 @@
 [node name="Tablero" parent="." unique_id=193022952 instance=ExtResource("1_kp0nx")]
 position = Vector2(168, 24)
 scale = Vector2(1.2, 1.2)
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)

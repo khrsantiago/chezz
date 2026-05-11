@@ -24,3 +24,10 @@ movimiento = Vector2(64, -128)
 [node name="Caballo2" parent="Tablero" unique_id=2068780988 instance=ExtResource("2_usg58")]
 position = Vector2(224, 160)
 script = null
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)

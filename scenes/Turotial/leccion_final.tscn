@@ -65,3 +65,10 @@ theme_override_font_sizes/font_size = 28
 text = "Menu Principal"
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/BotonMenu" to="." method="_on_boton_menu_pressed"]
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)

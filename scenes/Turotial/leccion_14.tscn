@@ -24,3 +24,10 @@ movimiento = Vector2(0, -192)
 [node name="Torre" parent="Tablero" unique_id=1414488143 instance=ExtResource("3_torre")]
 position = Vector2(160, 96)
 input_pickable = false
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+z_index = -100
+offset_right = 800.0
+offset_bottom = 600.0
+mouse_filter = 2
+color = Color(0.18, 0.20, 0.25, 1)
